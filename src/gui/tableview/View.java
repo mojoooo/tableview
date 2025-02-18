@@ -113,10 +113,12 @@ public class View extends Application
         dialog.show();
     }
     
-    private void editEntry() {
+    private void editEntry()
+    {
         StringDoublePair selectedEntry = this.table.getSelectionModel().getSelectedItem();
         
-        if (selectedEntry == null) {
+        if (selectedEntry == null)
+        {
             return;
         }
 
@@ -167,7 +169,8 @@ public class View extends Application
         }
     }
     
-    private void editAllEntry() {
+    private void editAllEntry()
+    {
         Stage dialog = new Stage();
 
         GridPane grid = new GridPane();
