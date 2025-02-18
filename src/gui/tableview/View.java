@@ -43,9 +43,9 @@ public class View extends Application
         
         this.table = new TableView<StringDoublePair>();
         TableColumn<StringDoublePair, String> entgeltColumn = new TableColumn<>("Entgelt");
-        entgeltColumn.setCellValueFactory(new PropertyValueFactory<>("entgelt"));
+        entgeltColumn.setCellValueFactory(new PropertyValueFactory<>("getEntgelt"));
         TableColumn<StringDoublePair, Double> gehaltColumn = new TableColumn<>("Gehalt");
-        gehaltColumn.setCellValueFactory(new PropertyValueFactory<>("gehalt"));        
+        gehaltColumn.setCellValueFactory(new PropertyValueFactory<>("getGehalt"));        
         this.table.getColumns().addAll(entgeltColumn, gehaltColumn);
         
         this.table.setItems(tableData);
@@ -144,8 +144,6 @@ public class View extends Application
             selectedEntry.setEntgelt(newEntgelt);
             selectedEntry.setGehalt(newGehalt);
             
-            this.table.refresh();
-            
             dialog.close();
         });
         
@@ -193,8 +191,6 @@ public class View extends Application
                     double newGehalt = oldGehalt + (oldGehalt * percentage / 100);
                     entry.setGehalt(newGehalt);
                 }
-                
-                this.table.refresh();
 
                 dialog.close();
             } 

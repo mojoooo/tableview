@@ -28,6 +28,16 @@ public class StringDoublePair
         this.gehalt.set(gehalt);
     }
     
+    public SimpleStringProperty getEntgeltProperty()
+    {
+        return this.entgelt;
+    }
+
+    public SimpleDoubleProperty getGehaltProperty()
+    {
+        return this.gehalt;
+    }
+    
     public StringDoublePair(String entgelt, Double gehalt)
     {
         this.setEntgelt(entgelt);
